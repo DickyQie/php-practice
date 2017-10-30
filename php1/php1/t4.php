@@ -108,6 +108,12 @@ echo ($v==true)?三:NO;
 echo '<br/>';
 
 
+$string='张切';
+//UTF-8 一个汉字 3bytes GBK 2bytes
+echo strlen($string);//6
+
+
+
 
 
 

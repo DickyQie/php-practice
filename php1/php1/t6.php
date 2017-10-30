@@ -71,3 +71,30 @@ foo();
 /* 现在可以调用bar()函数了，因为foo()函数
  的执行使得bar()函数变为已定义的函数 */
 bar();
+
+class Foo{
+    static $variable = 'static propertry';
+    static function Variable(){
+        echo "<br/>This is veriable";
+    }
+}
+
+echo Foo::$variable;
+$variable = "Variable";
+Foo::$variable();//This is veriable
+
+$str="123";
+echo '<br/>'.isset($str);
+if(!empty($str) && isset($str)){
+    echo $str;
+}
+
+/***
+ *exit();终止程序执行
+ *die()相同
+ */
+echo "<br/>";
+//exit();
+die("game over");
+echo "123";
+

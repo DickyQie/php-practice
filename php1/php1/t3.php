@@ -20,7 +20,7 @@ echo "<br/>";
 
 /***
  *
- * 数组
+ * 数组：数值数组 关联数组 多维数组
  *
 sort() - 对数组进行升序排列
 rsort() - 对数组进行降序排列
@@ -40,13 +40,30 @@ $array =[
 
 echo $array['foo'].'<br/>';
 
-$a= array(1 => 'bb', 2 => 'ccc', 3=> 'aa');
+$a= array(1 => 'b', 2 => 'c', 3=> 'a');
 var_dump($a);
 echo "<br/>".$a[2]."<br/>";
 sort($a);//元素按照字母升序排列
 echo print_r($a),"<br/>";//Array ( [0] => aa [1] => bb [2] => ccc ) 1
+//反向排序
+rsort($a);
+print_r($a);
+echo '<br/>随机排列';
+shuffle($a);
+print_r($a);
+$b=array("a"=>'aaa');
+$c=array("b"=>'bbb',"c"=>"ccc");
+$d=array_merge($b,$c);
+echo '<br/>合并数组';
+print_r($d);
+
+
+
+
 
 echo"<hr>";
+
+
 
 
 /***
@@ -55,7 +72,7 @@ echo"<hr>";
  *常量
  *
  */
-$a= 1;
+$a = 1;
 $b = 2;
 
 function test(){
