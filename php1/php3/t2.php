@@ -7,13 +7,28 @@
  */
 
 /***
- * Interface iDB接口测试
+ * Trait :代码复用
  */
 
-
-interface iDB{
-    function connect($sql);
-    function add($sql);
+class Base{
+    public function sayHello(){
+        echo 'Hello';
+    }
 }
+
+trait SayWorld{
+    public function sayHello(){
+        parent::sayHello();
+        echo ' World';
+    }
+}
+
+class MyHelloWorld extends Base{
+    use SayWorld;
+}
+
+$ab=new MyHelloWorld();
+$ab->sayHello();
+
 
 

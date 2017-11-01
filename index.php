@@ -7,10 +7,4 @@
  */
 
 echo 'Holle World ',"<br/>";
-
- $a=9;
-if($a > 6){
-    echo "$a";
-}else{
-    echo '6';
-}
+phpinfo();

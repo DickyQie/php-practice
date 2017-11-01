@@ -32,21 +32,6 @@ echo @(3/0).'<br/>';
 echo $php_errormsg;//Division by zero
 echo '<br/>';
 
-/***
- * 异常处理
- *
- */
-
-try{
-    $error='数据库连接失败';
-    throw new Exception($error);
-    echo '永远不会执行';
-}catch (Exception $e){
-    echo '捕获到：'.$e->getMessage().'<br/>';
-}
-
-echo '从这里开始执行<br/>';
-
 
 /***
  * 99chengfa

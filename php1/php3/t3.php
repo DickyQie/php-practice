@@ -6,12 +6,33 @@
  * Time: 17:46
  */
 
-abstract class t3 implements iDB{
+/***
+ * Interface iTemplate
+ * 接口
+ */
 
-    function connext($sql){
+interface  iTemplate{
+    public function setVariable($name, $var);
+    public function getHtml($template);
+}
 
+// 实现接口
+class Template implements iTemplate
+{
+    public function setVariable($name, $var)
+    {
+       echo $name.'---'.$var.'<br/>';
     }
-    function add($sql){
 
+    public function getHtml($template)
+    {
+      echo $template;
     }
 }
+
+$temp=new Template();
+$temp->setVariable("zhangqie","23");
+$temp->getHtml("php");
+
+
+
