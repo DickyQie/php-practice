@@ -21,7 +21,7 @@ class AdminService{
         $sqlHelper=new SQLHelper();
         $res=$sqlHelper->execute_sql($sql);
         if($row=mysql_fetch_assoc($res)){
-            if(md5($pwd)==$row['password']){
+            if(md5($pwd)==$row['password']){//
                 return $row['name'];
             }
         }
@@ -30,4 +30,5 @@ class AdminService{
         $sqlHelper->close_connect();
         return "";
     }
+
 }

@@ -10,11 +10,18 @@
 
     <?php
 
-
+    require_once("comnon.php");
+    checkUserValidate();
     /**
      * 显示用户名
      */
-    echo "欢迎".$_GET['name']."登录成功";
+
+   // echo "欢迎".$_GET['name']."登录成功";
+    /***
+     * 其他方式 可用Session
+     */
+    echo "欢迎".$_SESSION['loginuser']."登录成功";
+
     echo "<br/><a href='login.php'>重新登录</a>"; ?>
 
 

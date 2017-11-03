@@ -36,11 +36,21 @@
         <table>
             <tr>
                 <td>ID号:</td>
-                <td><input type="text" name="userid"></td>
+                <td><input type="text" name="userid" value="<?php
+                        if(!empty($_COOKIE['empzqname'])){
+                            echo $_COOKIE['empzqname'];
+                        }else{
+                            echo "";
+                        }
+                    ?>"></td>
             </tr>
             <tr>
                 <td>密码:</td>
                 <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td>是否保存用户名</td>
+                <td><input type="checkbox" name="check" value="name"></td>
             </tr>
             <tr>
                 <td><input class="btnsub" type="submit" value="用户登录"></td>
@@ -49,6 +59,9 @@
         </table>
     </form>
     <?php
+        if(!empty($_COOKIE['empzqtime'])){
+            echo "<p style='color: royalblue'>上次的登录时间是:{$_COOKIE['empzqtime']}</p>";
+        }
         if(!empty($_GET["error"])) {
             if($_GET['error']==1){
                 echo '<p style="color: red">你的用户名和密码错误</p>';

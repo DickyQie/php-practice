@@ -16,6 +16,8 @@
         //V层
         require_once("EmpService.class.php");
         require_once("FonyPage.class.php");
+        require_once("comnon.php");
+        checkUserValidate();
 
         //封装2
         $fenyePage=new FonyPage();

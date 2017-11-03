@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zhangqie
- * Date: 2017/10/31
- * Time: 19:49
- */
 /***
  * cookie
  * 设置Cookie参数
@@ -19,9 +13,13 @@
  * 每个域名最大20个Cookie;
  * 多了随机删除。
  *
+ *
+ * 商城项目
+ * 浏览痕迹
+ *
  * */
 
-//
+//Cookie==小甜品
 setcookie("cookie1",'php',time()+3600);
 echo $_COOKIE["cookie1"].'<br/>';//读取Cookie
 
@@ -41,7 +39,7 @@ echo "本次访问为：".date("Y-m-d H:i:s");
 if(!isset($_COOKIE['cookie1'])){
     setcookie("cookie1",'php',time()+3600);
 }else{
-    //删除Cookie
+    //删除Cookie  指定删除  删除文件不会删除
     setcookie("cookie1","",time()-1);//清除cookie
 }
 
@@ -49,7 +47,7 @@ if(!isset($_COOKIE['cookie1'])){
 echo "<br/>".$_COOKIE["cookie1"].'<br/>';
 
 
-//Cookie 全部删除  用遍历
+//Cookie 全部删除  用遍历  客户端的Cookie文件删除
 /*foreach($_COOKIE as $key=>$val){
     echo $key.'----'.$val;
     setcookie($key,"",time()-1);
@@ -65,6 +63,10 @@ if(isset($_COOKIE['time'])){
     setcookie('time',date("Y-m-d H:i:s",time()+3600));
 }
 echo "这次的登录时间是".date("Y-m-d H:i:s");
+
+echo "<br/>".urldecode("%E6%98%AF%E7%9A%84");
+echo "<br/>".urlencode("是的");
+
 
 
 
