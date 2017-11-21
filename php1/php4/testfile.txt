@@ -1,2 +1,2 @@
-this is model
+this is model 你好
 this is View

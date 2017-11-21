@@ -11,9 +11,15 @@
  */
 
 require_once("AdminService.php");
+session_start();
 $id=$_POST["userid"];
 $pwd=$_POST["pwd"];
-
+$checkcode=$_POST["checkcode"];
+//先验证验证码
+if(md5($checkcode)!=$_SESSION["verification"]){
+    header("Location:login.php?error=2");
+    exit;
+}
 
 $admin=new AdminService();
 if($name=$admin->checkAdmin($id,$pwd)){
@@ -25,7 +31,6 @@ if($name=$admin->checkAdmin($id,$pwd)){
             setcookie("empzqname",$name,time()-1);
         }
     }
-    session_start();
     $_SESSION["loginuser"]=$name;
     header("Location:empManage.php?name=$name");
     exit();

@@ -24,5 +24,10 @@ $arr=array("012312345678","1236-1234568","12345678");
 $preg=preg_grep($exnd,$arr);
 var_dump($preg);
 
+//
+$str="1234asdfdas;asdfdsaf;5555 dsaf;";
+$pattern="/\\d\\d\\d\\d/i";
+$renStr=preg_replace($pattern," zhangqie ",$str);
+echo "<br>".$renStr;
 
 

@@ -42,3 +42,5 @@ echo \Foo\Bar\FOO."<br/>";
 \Foo\Bar\subnamespace\foo::staticmethod();
 echo \Foo\Bar\subnamespace\FOO;
 
+
+

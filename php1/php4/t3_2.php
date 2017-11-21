@@ -6,8 +6,20 @@
 
 //header("Content-Type:text/html;charset=utf-8");
 
-echo "1";
+echo $_SERVER['DOCUMENT_ROOT']."<br/>";//E:/Fphpstorm/PhpPrimary
 
+
+header("content-type:text/html;charset=utf-8");
+echo "<pre>";
+print_r($_FILES);
+echo "</pre>";
+
+$count = count($_FILES['pic']['name']);
+
+
+
+
+/*
 $num=count($_FILES['pic']['name']);
 for($i=0;$i<$num;$i++){
     if($_FILES['pic']['error'][$i]>0){
@@ -52,4 +64,4 @@ for($i=0;$i<$num;$i++){
         echo "上传失败<br>";
     }
 
-}
+}*/

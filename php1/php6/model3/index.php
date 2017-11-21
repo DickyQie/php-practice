@@ -46,6 +46,7 @@ insert into emp(name,gade,email,salary) values("中国",2,'zm@qq.com',123);
 
 delete from emp where id=33;
 
+ show tables;  查看表
 mysql>
  *
  *

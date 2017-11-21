@@ -8,25 +8,33 @@
 
 /****
  * 文件
+ *
+ *
  */
 
 //返回文本+长度大小
-echo readfile("msg.txt")."<br/>";
+echo readfile("msg.txt")."<br/>";//my name is zhangqie 张切 张三34
+
+
 
 $myfile = fopen("msg.txt", "r") or die("Unable to open file!");
 //fread() 的第一个参数包含待读取文件的文件名，第二个参数规定待读取的最大字节数。
-echo fread($myfile,filesize("msg.txt"))."<br/>";
+echo filesize("msg.txt")."<br/>";
+echo "指定文件大小读取：".fread($myfile,12)."<br/>";
 fclose($myfile);//关闭文件
+
+
 
 
 $myfile = fopen("msg.txt", "r") or die("Unable to open file!");
 //读取单行文件
-echo fgets($myfile)."<br/>";
+echo "读取单行文件：".fgets($myfile)."<br/>";
 fclose($myfile);
 
 
 //逐行读取，遍历  直到end-of-file
 $myfile=fopen("msg.txt","r") or die("Ynable to open file");
+echo "逐行读取: <br/>";
 while(!feof($myfile)){
      echo fgets($myfile)."<br/>";
    // echo fgetc($myfile)."<br/>";//读取单个字符
@@ -39,7 +47,7 @@ fclose($myfile);
  */
 
 $myfile=fopen("testfile.txt","w") or die("error");
-$txt="this is model\n";
+$txt="this is model 你好\n";
 fwrite($myfile,$txt);
 $txt="this is View\n";
 fwrite($myfile,$txt);
@@ -131,8 +139,62 @@ function getFileMulu(){
 getFileMulu();
 
 
+//读取2
+echo file_get_contents("msg.txt")."<br/>";
 
 
+//读取3
+$array=parse_ini_file("db.txt");
+//Array ( [host] => 192.168.1.23 [name] => zhangqie [passworld] => 123456 )
+print_r($array);
+
+//存连接数据库信息，
+//mysql_connect
+
+
+//第二种文件写入
+
+$con="北京你好!\r\n";
+file_put_contents("msg.txt",$con,FILE_APPEND);
+//会重复添加，for循环不好   自身包含一次写入 一次关闭，多个重复影响效率，用可以拼接
+
+
+
+
+//拷贝文件
+
+copy("testfile.txt","E:\\Fphpstorm\\PhpPrimary\\php1\\php4\\upload\\a.txt");
+
+echo "<br/>ok";
+
+
+//文件夹创建和删除
+
+if(!is_dir("e:/zhangqie") && mkdir("e:/zhangqie")){
+    echo "<br/>创建成功";
+}else{
+    echo "<br/>创建失败";
+}
+
+//删除文件夹
+if(rmdir("e:/zhangqie")){
+    echo "<br/>删除成功";
+}else{
+    echo "<br/>删除失败";
+}
+
+
+//删除文件
+/*$file="E:\\Fphpstorm\\PhpPrimary\\php1\\php4\\upload\\a.txt";
+if(is_file($file)){
+    if(unlink($file)){
+        echo "<br/>删除成功";
+    }else{
+        echo "<br/>删除失败";
+    }
+}else{
+    echo "文件不存在";
+}*/
 
 
 
